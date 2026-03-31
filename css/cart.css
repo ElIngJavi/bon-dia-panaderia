@@ -1,0 +1,48 @@
+/* ============================================
+   cart.css — Carrito de compras lateral
+   Bon Dia Panadería
+   ============================================ */
+
+/* ---- Panel lateral (slide-in desde la derecha) ---- */
+#cart-panel {
+  transition: transform 0.4s cubic-bezier(0.32, 0, 0.15, 1);
+}
+
+/* ---- Overlay oscuro ---- */
+#cart-overlay {
+  transition: opacity 0.35s ease;
+}
+
+/* ---- Badge del contador ---- */
+#cart-count {
+  min-width: 18px;
+  height: 18px;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  animation: popIn 0.25s ease;
+}
+@keyframes popIn {
+  0%   { transform: scale(0.4); opacity: 0; }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+/* ---- Items del carrito ---- */
+@keyframes cartItemFade {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.cart-item { animation: cartItemFade 0.25s ease forwards; }
+
+/* ---- Botón de checkout (WhatsApp) ---- */
+#cart-checkout-btn {
+  transition: all 0.25s ease;
+}
+#cart-checkout-btn:not(:disabled):hover {
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+  transform: translateY(-1px);
+}

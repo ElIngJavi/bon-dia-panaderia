@@ -1,0 +1,90 @@
+/* ============================================
+   animations.css — Scroll reveals & micro-interacciones
+   Bon Dia Panadería
+   ============================================ */
+
+/* ---- Reveal al hacer scroll ---- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delays escalonados para hijos */
+.reveal-on-scroll:nth-child(1) { transition-delay:   0ms; }
+.reveal-on-scroll:nth-child(2) { transition-delay:  80ms; }
+.reveal-on-scroll:nth-child(3) { transition-delay: 160ms; }
+.reveal-on-scroll:nth-child(4) { transition-delay: 240ms; }
+.reveal-on-scroll:nth-child(5) { transition-delay: 320ms; }
+
+/* ---- Efecto ripple en botones ---- */
+.btn-ripple { position: relative; overflow: hidden; }
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+}
+.btn-ripple:hover::after { opacity: 1; }
+
+/* ---- Animación de carga de página ---- */
+@keyframes pageReveal {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+body { animation: pageReveal 0.4s ease forwards; }
+
+/* ---- Flotantes ---- */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-8px) rotate(2deg); }
+  66%       { transform: translateY(-4px) rotate(-1deg); }
+}
+.animate-float      { animation: float 4s ease-in-out infinite; }
+.animate-float-slow { animation: floatSlow 6s ease-in-out infinite; }
+
+/* ---- Glow pulsante ---- */
+@keyframes softGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(194, 84, 26, 0.0); }
+  50%       { box-shadow: 0 0 0 8px rgba(194, 84, 26, 0.15); }
+}
+.animate-glow { animation: softGlow 2.5s ease-in-out infinite; }
+
+/* ---- Subrayado animado en links ---- */
+.link-underline {
+  background-image: linear-gradient(var(--color-primary), var(--color-primary));
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size var(--transition-base);
+  padding-bottom: 2px;
+}
+.link-underline:hover { background-size: 100% 1.5px; }
+
+/* ---- Zoom en imágenes ---- */
+.img-zoom-container { overflow: hidden; border-radius: var(--radius-lg); }
+.img-zoom-container img { transition: transform 0.6s ease; }
+.img-zoom-container:hover img { transform: scale(1.06); }
+
+/* ---- Skeleton loading ---- */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--color-cream-dark) 25%, var(--color-wheat) 50%, var(--color-cream-dark) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}

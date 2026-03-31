@@ -1,0 +1,67 @@
+/* ============================================
+   nav.css — Barra de navegación
+   Bon Dia Panadería
+   ============================================ */
+
+/* ---- Base navbar ---- */
+.navbar {
+  background-color: rgba(253, 245, 232, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Estado al hacer scroll */
+.navbar.scrolled {
+  background-color: rgba(253, 245, 232, 0.97);
+  border-bottom-color: rgba(232, 201, 138, 0.35);
+  box-shadow: 0 2px 24px rgba(61, 31, 13, 0.08);
+}
+
+/* ---- Logo ---- */
+.logo-circle {
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+.nav-logo:hover .logo-circle {
+  border-color: var(--color-primary-dark);
+  transform: rotate(-5deg) scale(1.05);
+}
+
+/* ---- Links con subrayado animado ---- */
+.nav-link {
+  position: relative;
+  padding-bottom: 3px;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1.5px;
+  background-color: var(--color-primary);
+  transition: width var(--transition-base);
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+.nav-link.active        { color: var(--color-primary); }
+
+/* ---- Botón hamburguesa ---- */
+#menu-toggle.is-open .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+#menu-toggle.is-open .hamburger-line:nth-child(2) { opacity: 0; transform: scaleX(0); }
+#menu-toggle.is-open .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ---- Menú móvil ---- */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+.mobile-menu.is-visible {
+  max-height: 600px;
+  opacity: 1;
+}
+.mobile-nav-link {
+  border-bottom: 1px solid rgba(232, 201, 138, 0.25);
+}
+.mobile-nav-link:last-child { border-bottom: none; }
