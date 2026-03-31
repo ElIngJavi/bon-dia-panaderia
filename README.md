@@ -1,40 +1,54 @@
-# BON DIA PANADERÍA — Website Project Summary
+# 🍞 BON DIA PANADERÍA — Sitio Web Artesanal
 
-**Bon Dia Panadería** es una microempresa de Tijuana, BC, México, dedicada a la elaboración artesanal de pan de masa madre con harina orgánica, sin conservadores y con fermentación lenta. Este repositorio contiene el sitio web promocional y de ventas de la panadería, construido con HTML5, CSS modular y JavaScript vanilla.
+> Pan de masa madre artesanal elaborado con harina orgánica, sin conservadores y con fermentación lenta en **Tijuana, Baja California.**
 
-## Descripción del Negocio
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=flat&logo=netlify&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)
 
-Bon Dia Panadería opera desde el **Kiosko K-4 del Centro Comercial Playas** (entrada a Soriana, Tijuana). Sus productos también están disponibles en el punto de venta **Panadería y Pastelería Denisse** (De Las Nubes 631, Jardines del Sol). El catálogo incluye hogazas artesanales, bollos, panes dulces y productos de temporada, todos elaborados sin conservadores con ingredientes orgánicos.
+🌐 **Demo en vivo:** [dazzling-cannoli-1e2d81.netlify.app](https://dazzling-cannoli-1e2d81.netlify.app)
 
-- Horario: Lun–Vie 10:00 am–7:00 pm · Sáb 10:00 am–5:00 pm · Dom Cerrado
-- Contacto: WhatsApp 664 502 2113
-- Instagram: [@bondia.panaderia](https://www.instagram.com/bondia.panaderia)
-- Facebook: [Bon Dia Panadería](https://web.facebook.com/bondia.panaderia/)
+---
 
-## Detalles Técnicos
+## 🏪 El Negocio
 
-"HTML5 semántico, CSS modular (6 archivos), JavaScript vanilla (6 archivos), Tailwind CSS vía CDN con configuración de tema personalizada."
+**Bon Dia Panadería** es una microempresa dedicada a la fabricación de pan de masa madre de alta calidad. Aunque estamos iniciando, nuestros productos han tenido una alta aceptación que nos impulsa a seguir trabajando con más esfuerzo, honestidad y dedicación.
 
-- **Sin frameworks ni bundlers** — todo corre directamente en el navegador sin proceso de compilación
-- **Tailwind CSS** configurado mediante `js/tailwind.config.js` con paleta de colores y tipografías propias del negocio
-- **Leaflet.js** para el mapa interactivo con dos marcadores (tienda principal y punto de venta Denisse), cargado de forma diferida con `IntersectionObserver`
-- **Carrito de compras** implementado en vanilla JS con estado local, sincronizado entre `products.js` y `cart.js`
-- **Video de Instagram** en el hero con `<video>` tag (autoplay, muted, loop) en lugar de embed externo
-- **Google Fonts**: Playfair Display, Cormorant Garamond y Lato
-- **Deployed en Netlify** via drag & drop (proyecto: `dazzling-cannoli-1e2d81.netlify.app`)
+| 📍 Ubicación principal | ⏰ Horario | 📱 Contacto |
+|---|---|---|
+| Kiosko K-4, C.C. Playas, Tijuana | Lun–Vie 10am–7pm · Sáb 10am–5pm | WhatsApp 664 502 2113 |
 
-## Arquitectura
+- 📌 Punto de venta adicional: **Panadería y Pastelería Denisse** — De Las Nubes 631, Jardines del Sol, Playas de Tijuana
+- 📦 Entregas a domicilio vía Uber Moto (hasta 5 kg, costo por cuenta del cliente)
+- 📸 Instagram: [@bondia.panaderia](https://www.instagram.com/bondia.panaderia)
+- 👍 Facebook: [Bon Dia Panadería](https://web.facebook.com/bondia.panaderia/)
 
-El contenido dinámico se inyecta mediante módulos JavaScript independientes. `js/footer.js` construye y renderiza el footer completo desde un objeto de datos central (`FOOTER_DATA`), lo que permite actualizar teléfono, horarios y redes sociales en un solo lugar. `js/products.js` genera las tarjetas del catálogo con sus precios, y `js/cart.js` mantiene el estado del carrito con los mismos precios sincronizados. `js/map.js` inicializa el mapa Leaflet con `fitBounds()` para ajustar automáticamente la vista a ambas ubicaciones.
+---
 
-Los estilos están divididos en `base.css` (variables globales, reset, tipografía), `nav.css`, `hero.css`, `sections.css`, `animations.css`, `cart.css` y `map.css`, lo que permite modificar secciones sin afectar el resto del diseño.
+## ⚙️ Detalles Técnicos
 
-## Estructura del Proyecto
+"HTML5 semántico, CSS modular (6 archivos), JavaScript vanilla (6 archivos), Tailwind CSS vía CDN con tema personalizado."
+
+- 🎨 **Tailwind CSS** configurado en `js/tailwind.config.js` con paleta de colores y tipografías propias
+- 🗺️ **Leaflet.js** para mapa interactivo con dos marcadores y carga diferida via `IntersectionObserver`
+- 🛒 **Carrito de compras** en vanilla JS con estado local sincronizado entre `products.js` y `cart.js`
+- 🎬 **Video artesanal** en el hero con `<video>` autoplay/muted/loop sin dependencias externas
+- 🖋️ **Google Fonts**: Playfair Display, Cormorant Garamond y Lato
+- 🚀 **Sin frameworks ni bundlers** — corre directamente en el navegador
+
+---
+
+## 🏗️ Arquitectura
+
+El contenido dinámico se inyecta mediante módulos JS independientes. `js/footer.js` construye el footer desde un objeto `FOOTER_DATA` central. `js/products.js` genera las tarjetas del catálogo y `js/cart.js` mantiene el carrito con precios sincronizados. `js/map.js` usa `fitBounds()` para ajustar automáticamente la vista a ambas ubicaciones en el mapa.
 
 ```
 files/
-├── index.html
-├── css/
+├── 📄 index.html
+├── 🎨 css/
 │   ├── base.css          # Variables, reset, tipografía
 │   ├── nav.css
 │   ├── hero.css
@@ -42,31 +56,35 @@ files/
 │   ├── animations.css
 │   ├── cart.css
 │   └── map.css
-├── js/
+├── ⚙️ js/
 │   ├── tailwind.config.js
-│   ├── products.js       # Catálogo y renderizado de tarjetas
-│   ├── cart.js           # Lógica del carrito de compras
-│   ├── footer.js         # Inyección de footer desde FOOTER_DATA
-│   ├── map.js            # Mapa Leaflet con dos marcadores
+│   ├── products.js       # Catálogo y tarjetas
+│   ├── cart.js           # Carrito de compras
+│   ├── footer.js         # Footer desde FOOTER_DATA
+│   ├── map.js            # Mapa Leaflet dos marcadores
 │   ├── nav.js
 │   └── animations.js
-└── img/
-    ├── pan.jpeg          # Hero y galería
-    ├── pan2.mp4          # Video hero
+└── 🖼️ img/
+    ├── pan.jpeg
+    ├── pan2.mp4
     ├── pan3.png
     ├── pan4.png
     └── pan5.jpeg
 ```
 
-## Secciones del Sitio
+---
 
-- **Hero** — Video artesanal con llamada a la acción y badge de horarios
-- **Productos** — Catálogo con precios y carrito de compras
-- **Características** — Diferenciadores del pan de masa madre
-- **Beneficios** — Propiedades nutricionales y digestivas
-- **Ubicaciones** — Mapa interactivo + cards de tienda, punto de venta y entregas
-- **Acerca de Nosotros** — Historia, valores y galería de fotos
+## 📋 Secciones del Sitio
+
+| Sección | Descripción |
+|---|---|
+| 🎬 **Hero** | Video artesanal con llamada a la acción y badge de horarios |
+| 🛒 **Productos** | Catálogo con precios y carrito de compras |
+| ✨ **Características** | Diferenciadores del pan de masa madre |
+| 💚 **Beneficios** | Propiedades nutricionales y digestivas |
+| 📍 **Ubicaciones** | Mapa interactivo + cards de tienda, punto de venta y entregas |
+| 👋 **Nosotros** | Historia, valores y galería de fotos |
 
 ---
 
-*Bon Dia Panadería · Tijuana, México*
+*🥖 Bon Dia Panadería · Tijuana, México · Hecho con amor y masa madre*
