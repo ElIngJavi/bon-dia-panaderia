@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: #FDF5E8; color: #3D1F0D; font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; }
+  img, video { display: block; max-width: 100%; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  button { cursor: pointer; }
+}
+
+@layer utilities {
+  .section-pad { @apply py-24 px-6; }
+  .container-lg { @apply max-w-7xl mx-auto; }
+}
+
+/* ---- Nav link animated underline ---- */
+.nav-link {
+  position: relative;
+  padding-bottom: 3px;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1.5px;
+  background-color: #C2541A;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ---- Leaflet popup styles ---- */
+.bondia-popup-wrap .leaflet-popup-content-wrapper {
+  border-radius: 18px !important;
+  border: 1px solid rgba(232,201,138,0.35) !important;
+  box-shadow: 0 12px 40px rgba(61,31,13,0.15) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+.bondia-popup-wrap .leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+.bondia-popup-wrap .leaflet-popup-tip {
+  background: white !important;
+  box-shadow: none !important;
+}
+.bondia-popup-wrap .leaflet-popup-close-button {
+  top: 10px !important;
+  right: 12px !important;
+  color: rgba(61,31,13,0.35) !important;
+  font-size: 18px !important;
+}
+.bondia-popup {
+  font-family: 'Lato', sans-serif;
+  min-width: 210px;
+  padding: 16px;
+}
+.bondia-popup-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.bondia-popup-logo {
+  width: 36px;
+  height: 36px;
+  background: #C2541A;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 8px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  text-align: center;
+}
+.bondia-popup-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #3D1F0D;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+.bondia-popup-sub {
+  color: rgba(61,31,13,0.4);
+  font-size: 0.72rem;
+  margin-top: 2px;
+}
+.bondia-popup-body {
+  border-top: 1px solid rgba(61,31,13,0.08);
+  padding-top: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.bondia-popup-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  color: rgba(61,31,13,0.6);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.bondia-popup-row svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.bondia-popup-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  background: #25D366;
+  color: white;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s;
+  box-sizing: border-box;
+}
+.bondia-popup-wa:hover {
+  background: #1ebe5d;
+  color: white;
+  text-decoration: none;
+}
