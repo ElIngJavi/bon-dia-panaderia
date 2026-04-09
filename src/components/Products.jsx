@@ -99,6 +99,7 @@ export default function Products() {
           <h2 className="font-display font-bold text-5xl text-bark">Lista de Productos</h2>
           <div className="w-16 h-0.5 bg-primary mx-auto mt-4"/>
           <p className="font-body text-bark/50 text-sm mt-3">Haz clic en <strong>Agregar</strong> para armar tu pedido y enviarlo por WhatsApp</p>
+          <p className="font-body text-bark/40 text-xs mt-1">Sujeto a disponibilidad.</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-10">
