@@ -1,20 +1,20 @@
 const CLIENTS = [
   {
-    name: 'Café Marfil',
+    name: 'Salvaje Café',
     type: 'Cafetería',
-    emoji: '☕',
+    logo: '/img/negocio1.jpeg',
     quote: 'El pan de masa madre de Bon Dia elevó nuestro menú. Nuestros clientes siempre lo piden.',
   },
   {
-    name: 'Tostadas Coffee',
+    name: 'Cafecito Coffee & Deli',
     type: 'Cafetería',
-    emoji: '🥐',
+    logo: '/img/negocio2.jpeg',
     quote: 'Calidad constante, entrega puntual. Lo mejor que le pudimos hacer a nuestras tostadas.',
   },
   {
-    name: 'El Rincón del Chef',
-    type: 'Food Truck',
-    emoji: '🚚',
+    name: 'Birria Mosh',
+    type: 'Restaurante',
+    logo: '/img/negocio3.jpeg',
     quote: 'Nuestros sándwiches con hogaza de masa madre son el hit del mercado. ¡No pueden faltar!',
   },
 ]
@@ -33,7 +33,9 @@ export default function SocialProof() {
           {CLIENTS.map((c, i) => (
             <div key={i} className="bg-cream border border-wheat/40 rounded-2xl p-7 flex flex-col hover:shadow-lg transition-shadow duration-300">
               <div className="flex items-center gap-4 mb-5">
-                <div className="w-14 h-14 rounded-full bg-wheat/40 flex items-center justify-center text-3xl">{c.emoji}</div>
+                <div className="w-14 h-14 rounded-full bg-wheat/40 overflow-hidden flex items-center justify-center">
+                  <img src={c.logo} alt={c.name} className="w-full h-full object-cover"/>
+                </div>
                 <div>
                   <p className="font-display font-bold text-bark text-lg leading-tight">{c.name}</p>
                   <span className="inline-block mt-1 bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full font-body">{c.type}</span>
