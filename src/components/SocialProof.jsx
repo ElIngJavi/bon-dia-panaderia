@@ -33,7 +33,7 @@ export default function SocialProof() {
           {CLIENTS.map((c, i) => (
             <div key={i} className="bg-cream border border-wheat/40 rounded-2xl p-7 flex flex-col hover:shadow-lg transition-shadow duration-300">
               <div className="flex items-center gap-4 mb-5">
-                <div className="w-14 h-14 rounded-full bg-wheat/40 overflow-hidden flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 border border-wheat/40">
                   <img src={c.logo} alt={c.name} className="w-full h-full object-cover"/>
                 </div>
                 <div>
