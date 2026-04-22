@@ -3,7 +3,7 @@ const CLIENTS = [
     name: 'Salvaje Café',
     type: 'Cafetería',
     logo: '/img/negocio1.jpeg',
-    scale: 'scale-[1.8]',
+    scale: 'scale-[1.8] translate-x-3',
     quote: 'El pan de masa madre de Bon Dia elevó nuestro menú. Nuestros clientes siempre lo piden.',
   },
   {
