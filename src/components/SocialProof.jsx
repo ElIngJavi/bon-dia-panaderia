@@ -32,14 +32,12 @@ export default function SocialProof() {
         <div className="grid md:grid-cols-3 gap-6">
           {CLIENTS.map((c, i) => (
             <div key={i} className="bg-cream border border-wheat/40 rounded-2xl p-7 flex flex-col hover:shadow-lg transition-shadow duration-300">
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 border border-wheat/40">
-                  <img src={c.logo} alt={c.name} className="w-full h-full object-cover"/>
+              <div className="flex flex-col items-center mb-5">
+                <div className="w-28 h-28 mb-3">
+                  <img src={c.logo} alt={c.name} className="w-full h-full object-contain"/>
                 </div>
-                <div>
-                  <p className="font-display font-bold text-bark text-lg leading-tight">{c.name}</p>
-                  <span className="inline-block mt-1 bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full font-body">{c.type}</span>
-                </div>
+                <p className="font-display font-bold text-bark text-lg leading-tight text-center">{c.name}</p>
+                <span className="inline-block mt-1 bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full font-body">{c.type}</span>
               </div>
               <blockquote className="font-accent italic text-bark/70 text-base leading-relaxed">"{c.quote}"</blockquote>
               <div className="mt-4 flex gap-1">
