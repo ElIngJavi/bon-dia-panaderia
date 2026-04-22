@@ -35,10 +35,10 @@ export default function Nosotros() {
           {/* Images grid — right */}
           <div className="grid grid-cols-2 gap-3">
             {[
-              { src: '/img/pan.jpeg',  alt: 'Pan de masa madre Bon Dia' },
+              { src: '/img/pan6.jpeg',  alt: 'Pan de masa madre Bon Dia' },
               { src: '/img/pan3.png',  alt: 'Pan artesanal Bon Dia' },
               { src: '/img/pan4.png',  alt: 'Panadería Bon Dia' },
-              { src: '/img/pan5.jpeg', alt: 'Hogaza artesanal Bon Dia' },
+              { src: '/img/pan4.jpeg', alt: 'Hogaza artesanal Bon Dia' },
             ].map((img) => (
               <div key={img.src} className="rounded-2xl aspect-square overflow-hidden">
                 <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"/>
