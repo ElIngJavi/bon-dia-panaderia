@@ -3,18 +3,21 @@ const CLIENTS = [
     name: 'Salvaje Café',
     type: 'Cafetería',
     logo: '/img/negocio1.jpeg',
+    scale: 'scale-[1.8]',
     quote: 'El pan de masa madre de Bon Dia elevó nuestro menú. Nuestros clientes siempre lo piden.',
   },
   {
     name: 'Cafecito Coffee & Deli',
     type: 'Cafetería',
     logo: '/img/negocio2.jpeg',
+    scale: 'scale-125',
     quote: 'Calidad constante, entrega puntual. Lo mejor que le pudimos hacer a nuestras tostadas.',
   },
   {
     name: 'Birria Mosh',
     type: 'Restaurante',
     logo: '/img/negocio3.jpeg',
+    scale: 'scale-125',
     quote: 'Nuestros sándwiches con hogaza de masa madre son el hit del mercado. ¡No pueden faltar!',
   },
 ]
@@ -34,7 +37,7 @@ export default function SocialProof() {
             <div key={i} className="bg-cream border border-wheat/40 rounded-2xl p-7 flex flex-col hover:shadow-lg transition-shadow duration-300">
               <div className="flex flex-col items-center mb-5">
                 <div className="w-28 h-28 mb-3 rounded-full overflow-hidden">
-                  <img src={c.logo} alt={c.name} className="w-full h-full object-cover scale-125"/>
+                  <img src={c.logo} alt={c.name} className={`w-full h-full object-cover ${c.scale}`}/>
                 </div>
                 <p className="font-display font-bold text-bark text-lg leading-tight text-center">{c.name}</p>
                 <span className="inline-block mt-1 bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full font-body">{c.type}</span>
